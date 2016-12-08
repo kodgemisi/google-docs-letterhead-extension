@@ -1,0 +1,42 @@
+{
+  "name": "Kod Gemisi GoogleDocs Extensions",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "This extension was created with the awesome extensionizr.com",
+  "homepage_url": "http://extensionizr.com",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "default_locale": "en",
+  "background": {
+    "page": "src/bg/background.html",
+    "persistent": true
+  },
+  "permissions": [
+    "https://docs.google.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://docs.google.com/*"
+      ],
+      "css": [
+        "src/inject/inject.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://docs.google.com/*"
+      ],
+      "js": [
+        "src/inject/jquery.js", "src/inject/inject.js"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    "font/*.*",
+    "bg.png"
+  ]
+}
